@@ -1,0 +1,55 @@
+<META http-equiv="Content-Type" content="text/html;charset=utf-8">
+<Script language="JavaScript">
+			function Login(){
+				if(document.FrmLogin.uid.value == "") {
+					alert("ID를 입력하세요")
+					document.FrmLogin.uid.focus();
+				}
+				else if (document.FrmLogin.upw.value == "" ) {
+					alert("비밀번호를 입력하세요")
+					document.FrmLogin.upw.focus();
+				}
+				else {
+					document.FrmLogin.submit() ;
+				}
+			}
+
+</Script>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" leftmargin="0" topmargin="0" marginwidth=0
+	marginheight=80>
+	<!-- 로그인 입력창 시작 -->
+
+	<form method="post" name="FrmLogin" action="membermain.do?action=LOGIN">
+		<center>
+			<FONT face="굴림" size=3> 로그인하여 주세요</FONT>
+		</center>
+		<p>
+		<p>
+		<p>
+		<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=2 align=center>
+			<TR>
+				<TD><IMG SRC="images/id_id.gif" BORDER=0 ALT=""></TD>
+				<TD><input TYPE="text" name="uid" class="input" tabindex=1
+					onKeyPress="if (event.keyCode == 13) Login();"
+					style='width: 120; height: 20;'></TD>
+			</TR>
+			<TR>
+				<TD><IMG SRC="images/id_pass.gif" BORDER=0 ALT=""></TD>
+				<TD><input TYPE="password" name="upw" class="input" tabindex=2
+					onKeyPress="if (event.keyCode == 13) Login();"
+					style='width: 120; height: 20;'></TD>
+			</TR>
+			<TR />
+			<TR>
+				<TD></TD>
+				<TD HEIGHT="5" background="images/line.gif"></TD>
+			</TR>
+			<TR />
+			<TR>
+				<TD></TD>
+				<TD><A HREF="JavaScript:Login();">로그인</A> <a href="membermain.do?action=MEMBERREG">회원가입</a></TD>
+			</TR>
+		</TABLE>
+	</form>
+	<!-- 로그인 입력창 끝 -->

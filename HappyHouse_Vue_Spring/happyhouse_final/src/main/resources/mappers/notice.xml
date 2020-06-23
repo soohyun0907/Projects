@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.dao.NoticeDAO">
+
+	<!-- Notice 전체 조회 -->
+	<select id="selectNotice" resultType="notice">
+		select notice_no,
+			   notice_title,
+			   notice_content,
+			   notice_userid,
+			   notice_datetime
+		  from notice_board 
+		 order by notice_no desc
+	</select>
+
+	<!-- Notice 상세 조회 -->
+	<select id="selectDetailNotice"  parameterType="int" resultType="notice">
+		select notice_no,
+			   notice_title,
+			   notice_content,
+			   notice_userid,
+			   notice_datetime
+		  from notice_board 
+		 where notice_no = #{notice_no}
+	</select>
+
+	<!-- Notice 등록 -->
+	<insert id="insertNotice" parameterType="notice">
+		insert into notice_board(
+			   notice_title, notice_content, notice_userid, notice_datetime
+		) values (
+			   #{notice_title}, #{notice_content}, #{notice_userid}, now()
+		)
+	</insert>
+	
+	<!-- Notice 수정 -->
+	<update id="updateNotice" parameterType="notice">
+		update notice_board
+		   set notice_title =  #{notice_title},
+			   notice_content = #{notice_content},
+			   notice_userid = #{notice_userid},
+			   notice_datetime = #{notice_datetime}
+		 where notice_no = #{notice_no}
+	</update>
+
+	<!-- Notice 삭제 -->
+	<delete id="deleteNotice" parameterType="int">
+		delete 
+		  from notice_board
+		 where notice_no = #{notice_no}
+	</delete>
+	
+	<!-- for vue pagination (page-link) -->
+	<!-- 게시글 limit offset 조회 -->
+	<select id="selectNoticeLimitOffset" parameterType="map" resultType="notice">
+	    select *
+	     from notice_board
+	     order by notice_no desc
+	     limit #{limit} offset #{offset} 
+	</select>
+	
+	<!-- 게시글 limit offset 조회 -->
+	<select id="selectNoticeTotalCount" resultType="int">
+	    select count(*) from notice_board 
+	</select>
+	
+
+</mapper>
+

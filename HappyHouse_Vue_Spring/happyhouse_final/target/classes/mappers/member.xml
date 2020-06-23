@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssafy.happyhouse.dao.MemberDAO">
+
+	<select id="login" resultType="Integer">
+		select EXISTS (select * from ssafy_member where userid = #{userid} and userpwd = #{userpwd})
+	</select>
+	
+	<select id="select" resultType="member">
+		select userid, username, userpwd, email, address, joindate from ssafy_member where userid = #{userid}
+	</select>
+	
+	<select id="list" resultType="member">
+		select userid, username, userpwd, email, address, joindate from ssafy_member
+	</select>
+	
+	<insert id="insert">
+		insert into ssafy_member values ( #{userid}, #{username}, #{userpwd}, #{email}, #{address}, now())
+	</insert>
+	
+	<update id="update" parameterType="member">
+		update ssafy_member set userid = #{userid},
+							username = #{username},
+							userpwd = #{userpwd},
+							email = #{email},
+							address = #{address}
+		where userid = #{userid}
+	</update>
+	
+	<delete id="delete">
+		delete from ssafy_member where userid = #{userid}
+	</delete>
+</mapper>

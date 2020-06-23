@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.dao.StoreDAO">
+	
+	<!-- 상권정보 동 검색 조회 -->
+	<select id="selectStoreDong" parameterType="string" resultType="store">
+		select * from ssafydb.storeinfo where dong like CONCAT('%', #{word}, '%')
+	</select>
+	
+<!-- 	상권정보 상세조회 -->
+	<select id="detailStore" parameterType="int" resultType="store">
+		select * from ssafydb.storeinfo where no =  #{no}
+	</select>
+	
+	
+</mapper>
+

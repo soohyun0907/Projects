@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.dao.HousedealDAO">
+
+	<!-- 하우스딜 전체 조회 -->
+	<select id="selectHouseDealAll" resultType="housedeal">
+		select * from ssafydb.housedeal limit 30
+	</select>
+	
+	<!-- 하우스딜 동 검색 조회 -->
+	<select id="selectHouseDeaDong" parameterType="string" resultType="housedeal">
+		select * from ssafydb.housedeal where dong like CONCAT('%', #{word}, '%')
+	</select>
+	
+	<!-- 하우스딜 이름 검색 조회 -->
+	
+	<select id="selectHouseDeaAptName" parameterType="string" resultType="housedeal">
+		select * from ssafydb.housedeal where AptName like CONCAT('%', #{word}, '%')
+	</select>
+	
+	<!--  하우스딜 상세 조회  -->
+	<select id="selectDetailHousedeal" parameterType="int" resultType="housedeal">
+		select d.no, d.dong, d.AptName, d.code, d.dealAmount, d.buildYear, d.dealYear, d.dealMonth, d.dealDay, d.area,
+				d.floor, d.jibun, d.type, d.rentMoney, i.lat, i.lng
+		from housedeal d, houseinfo i
+		where d.no = i.no and d.no=#{no}
+	</select>
+	
+	<!-- for vue pagination (page-link) -->
+	<!--  limit offset 조회 -->
+	<select id="selectHousedealLimitOffset" parameterType="map" resultType="housedeal">
+	    select *
+	      from ssafydb.housedeal 
+	     limit #{limit} offset #{offset}
+	</select>
+	
+	<!-- limit offset 조회 -->
+	<select id="selectHousedealTotalCount" resultType="int">
+	    select count(*) from ssafydb.housedeal 
+	</select>
+	
+		<!-- 하우스딜 동 검색 조회 페이징-->
+	<select id="selectHouseDeaDongPaging" parameterType="map" resultType="housedeal">
+		select * 
+		from ssafydb.housedeal 
+		where dong like CONCAT('%', #{dong}, '%') 
+		limit #{limit} offset #{offset}
+	</select>
+	
+	<!-- 하우스딜 동 검색  limit offset 조회 -->
+	<select id="selectHousedealTotalCountDong" resultType="int">
+	    select count(*) 
+	    from ssafydb.housedeal 
+	    where dong like CONCAT('%', #{dong}, '%') 
+	</select>
+	
+	<!-- 하우스딜 이름 검색 조회  페이징-->
+	
+	<select id="selectHouseDeaAptNamePaging" parameterType="map" resultType="housedeal">
+		select * 
+		from ssafydb.housedeal 
+		where AptName like CONCAT('%', #{Aptname}, '%') 
+		limit #{limit} offset #{offset}
+	</select>
+	
+	<!-- 하우스딜 이름 검색 limit offset 조회 -->
+	<select id="selectHousedealTotalCountAptname" resultType="int">
+	    select count(*) 
+	    from ssafydb.housedeal 
+	    where AptName like CONCAT('%', #{Aptname}, '%') 
+	</select>
+</mapper>
+

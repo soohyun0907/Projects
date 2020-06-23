@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.dao.FavoriteDAO">
+		
+	<!-- 	선호지역설정하기 -->
+		<insert id="insertFavorite">   
+	      insert into favinfo(id, dong_name, dong_code) 
+	         select #{id},#{dong_name},#{dong_code} from dual
+	             where not exists 
+	            (select id, dong_name, dong_code
+	             from favinfo 
+	             where id=#{id} and dong_name=#{dong_name} and dong_code=#{dong_code})
+	   </insert>
+	   
+	<!-- 	   선호지역 가져오기 -->
+	   <select id="selectFavorite" resultType="Favorite">
+	      select dong_name , dong_code from favinfo where id= #{id}
+	   </select>
+	   
+	<!-- 	 선호지역 삭제하기 -->
+	<delete id="deleteFavorite">
+		delete from favinfo where id = #{id} and dong_name = #{dong_name}
+	</delete>
+		
+</mapper>
+
+   

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.dao.QnADAO">
+
+	<!-- QnA 전체 조회 -->
+	<select id="selectQnA" resultType="qna">
+		select qna_no,
+			   qna_title,
+			   qna_content,
+			   qna_userid,
+			   qna_datetime,
+			   reply_content,
+			   reply_datetime,
+			   reply_userid
+		  from qna_board 
+		 order by qna_no desc
+	</select>
+
+	<!-- QnA 상세 조회 -->
+	<select id="selectDetailQnA"  parameterType="int" resultType="qna">
+		select qna_no,
+			   qna_title,
+			   qna_content,
+			   qna_userid,
+			   qna_datetime,
+			   reply_content,
+			   reply_datetime,
+			   reply_userid
+		  from qna_board 
+		 where qna_no = #{qna_no}
+	</select>
+
+	<!-- QnA 등록 -->
+	<insert id="insertQnA" parameterType="qna">
+		insert into qna_board(
+			   qna_title, qna_content, qna_userid, qna_datetime, reply_content, reply_datetime, reply_userid
+		) values (
+			   #{qna_title}, #{qna_content}, #{qna_userid}, now(), #{reply_content}, #{reply_datetime}, #{reply_userid}
+		)
+	</insert>
+	
+	<!-- QnA 수정 -->
+	<update id="updateQnA" parameterType="qna">
+		update qna_board
+		   set qna_title =  #{qna_title},
+			   qna_content = #{qna_content},
+			   qna_userid = #{qna_userid},
+			   qna_datetime = #{qna_datetime},
+			   reply_content = #{reply_content},
+			   reply_datetime = #{reply_datetime},
+			   reply_userid = #{reply_userid}
+		 where qna_no = #{qna_no}
+	</update>
+
+	<!-- QnA 삭제 -->
+	<delete id="deleteQnA" parameterType="int">
+		delete 
+		  from qna_board
+		 where qna_no = #{qna_no}
+	</delete>
+	
+	<!-- for vue pagination (page-link) -->
+	<!-- 게시글 limit offset 조회 -->
+	<select id="selectQnALimitOffset" parameterType="map" resultType="qna">
+	    select *
+	      from qna_board 
+	       order by qna_no desc
+	     limit #{limit} offset #{offset}
+	</select>
+	
+	<!-- 게시글 limit offset 조회 -->
+	<select id="selectQnATotalCount" resultType="int">
+	    select count(*) from qna_board
+	</select>
+
+</mapper>
+

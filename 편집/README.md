@@ -1,5 +1,18 @@
 # 편집 
 
+- 개발 기간 : 20.07.20 ~ 20.08.21
+- Front-end : Vue.js
+- Back-end : SpringRestful
+- 6명이 한 팀으로 진행.
+- 내가 맡은 역할 : 팀장 & 프론트, 백엔드 (프론트 엔드 개발 위주 - 특히, 포트폴리오페이지 프론트, 백 모두 개발)
+- 프로젝트 소개 : 편집자와 편집자를 찾는 사람들 사이의 매칭 플랫폼
+- 프로젝트 특장점
+  - CF알고리즘을 통한 사용자 맞춤 편집자 추천
+  - Redis를 이용하여 보다 빠른 검색결과 반환
+  - 알람 페이지에 스케줄러 기능 제공
+
+- [프로젝트에 대한 자세한 소개]([https://github.com/soohyun0907/Projects/blob/master/%ED%8E%B8%EC%A7%91/wiki/home.md](https://github.com/soohyun0907/Projects/blob/master/편집/wiki/home.md))
+
 ## 메인페이지_로그인 전
 
 ![스크린샷 2020-08-24 오후 10 43 54](https://user-images.githubusercontent.com/33771279/91051983-cf25e100-e65b-11ea-8103-b5bf9de54ac0.png)

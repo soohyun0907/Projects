@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.web.editor.model.mapper.user.SearchMapper">
+	<!-- <select id="searchAll" resultType="Portfolio" parameterType="Map">
+		select * from portfolio
+		<where>
+			<if test="nickname != null and nickname != ''">
+				and nickname like concat('%', #{nickname}, '%')
+			</if>
+			<if test="payMin != null and payMin != ''">
+				and payMin like concat('%', #{payMin}, '%')
+			</if>
+		</where>
+		limit #{currentPage}, #{sizePerPage}
+	</select> -->
+	
+	<select id="searchAll" resultType="PortfolioList">
+		select `uid`, `nickname`, `pay_min` as payMin
+		FROM portfolio
+	</select>
+
+
+	<select id="search" resultType="Portfolio" parameterType="Integer">
+		select * from portfolio where uid = #{uid}
+		
+	</select>
+	
+	<select id="getTotalCount" resultType="Integer" parameterType="Map">
+		select count(uid) from portfolio
+		<where>
+			<if test="nickname != null and nickname != ''">
+				and nickname like concat('%', #{nickname}, '%')
+			</if>
+			<if test="payMin != null and payMin != ''">
+				and payMin like concat('%', #{payMin}, '%')
+			</if>
+		</where>
+	</select>
+
+	<!-- Redis에 올려두기 위한 Join문 -->
+	<!-- 포트폴리오 - 북마크 -->
+	<!-- , P.skill as skill -->
+	<select id="joinBookmarks" resultType="SearchPortfolioJoinBookmark">
+		SELECT P.uid as uid, P.nickname as nickname, P.pay_min as payMin, COUNT(B.user_info_uid) as bookmarkNumber
+		FROM `portfolio` P
+		LEFT JOIN `bookmark` B ON P.uid = B.mark_uid
+		GROUP BY P.uid
+	</select>
+
+	<!-- 포트폴리오 - 영상 -->
+	<select id="joinVideos" resultType="SearchPortfolioJoinVideo">
+		SELECT P.uid as uid, V.url as mainUrl
+		FROM `portfolio` P
+		LEFT JOIN `video_info` V ON P.uid = V.portfolio_uid AND V.main_flag = 1
+	</select>
+
+	<select id="searchPortfolioTag" resultType="SearchTag">
+		SELECT portfolio_uid as uid, tag_name as tagName
+		FROM `portfolio_tag`
+	</select>
+</mapper>

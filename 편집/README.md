@@ -11,7 +11,7 @@
   - Redis를 이용하여 보다 빠른 검색결과 반환
   - 알람 페이지에 스케줄러 기능 제공
 
-- [프로젝트에 대한 자세한 소개]([https://github.com/soohyun0907/Projects/blob/master/%ED%8E%B8%EC%A7%91/wiki/home.md](https://github.com/soohyun0907/Projects/blob/master/편집/wiki/home.md))
+- [프로젝트에 대한 자세한 소개](https://github.com/soohyun0907/Projects/blob/master/편집/wiki/home.md)
 
 ## 메인페이지_로그인 전
 

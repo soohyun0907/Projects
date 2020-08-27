@@ -30,7 +30,6 @@
 ## 편집, 편하게 집에서 의뢰하세요
 
 - 개발 기간 : 20.07.20 ~ 20.08.21
-
 - Front-end : Vue.js, Vuex, Vuetify
 - Back-end : SpringRestful MVC, MyBatis
 - 6명이 한 팀으로 진행.

@@ -2,7 +2,7 @@
 
 ## 자율주행 서빙로봇, SERBOT(서봇; Serving + Robot)
 
-- 개발 기간 : 18.12 ~ 19.20
+- 개발 기간 : 18.12 ~ 19.02
 - 사용 기술 : ROS, SLAM, Navigation
 - 하드웨어 : Master PC, Arduino, RaspberryPi 3, RaspberryPi Camera, RPLidar
 - 내가 맡은 역할 : 팀장 & 전체 개발

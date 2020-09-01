@@ -1,5 +1,20 @@
 # Projects
 
+## 자율주행 서빙로봇, SERBOT(서봇; Serving + Robot)
+
+- 개발 기간 : 18.12 ~ 19.20
+- 사용 기술 : ROS, SLAM, Navigation
+- 하드웨어 : Master PC, Arduino, RaspberryPi 3, RaspberryPi Camera, RPLidar
+- 내가 맡은 역할 : 팀장 & 전체 개발
+- 프로젝트 소개 : 인건비 상승으로 어려움을 호소하는 자영업자들과 언택트 문화를 선호하는 소비자를 위한 자자율주행 서빙로봇, 서봇
+- 프로젝트 특장점
+  - 사용자의 입력에 따라 지정된 위치까지 자율주행을 통해 움직인 후 충전 위치로 돌아온다.
+  - openCV를 통하여 사람일 경우 '비켜주세요'라는 음력 출력, 물체일 경우 돌아서 움직인다.
+- [프로젝트 진행에 관한 PDF](https://github.com/soohyun0907/serbot_pdf)
+- [Serbot Master PC Side](https://github.com/soohyun0907/serbot_pc)
+- [Serbot Arduino Side](https://github.com/soohyun0907/serbot_arduino)
+- [Serbot RaspberryPi Side](https://github.com/soohyun0907/serbot_rpi)
+
 ## HappyHouse_Web_Front
 
 - 개발 기간 : 20.05.01 ~ 20.05.13
@@ -40,4 +55,4 @@
   - Redis를 이용하여 보다 빠른 검색결과 반환
     - 편집자의 작업 이력을 통한 편집자 추천(검색 결과 반환)
   - 알람 페이지에 스케줄러 기능 제공
-- [프로젝트 자세히 보기](https://github.com/soohyun0907/Projects/tree/master/편집)
+- [프로젝트 자세히 보기](https://github.com/soohyun0907/VideoEditorMatchingPlatform)

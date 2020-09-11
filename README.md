@@ -69,4 +69,4 @@
   - Redis를 이용하여 보다 빠른 검색결과 반환
     - 편집자의 작업 이력을 통한 편집자 추천(검색 결과 반환)
   - 알람 페이지에 스케줄러 기능 제공
-- [프로젝트 자세히 보기](https://github.com/soohyun0907/VideoEditorMatchingPlatform)
+- [프로젝트 자세히 보기](https://github.com/soohyun0907/VideoEditorMatchingPlatform/blob/master/wiki/home.md)

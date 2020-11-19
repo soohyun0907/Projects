@@ -43,7 +43,7 @@
 
 - 개발 기간 : 20.06.08 ~ 20.06.19
 - Front-End : Vue.js, AXOIS, CSS, JavaScript
-- Back-End : SpringRestful MVC, MyBatis
+- Back-End : Spring Boot, MyBatis
 - 2명이서 한 팀으로 진행
 - 위의 지난 프로젝트의 발전
 - 내가 맡은 역할 : 팀장 & 프론트, 백엔드 개발 (Google Map API)
@@ -60,8 +60,8 @@
 
 - 개발 기간 : 20.07.20 ~ 20.08.21
 - Front-end : Vue.js, Vuex, Vuetify
-- Back-end : SpringRestful MVC, MyBatis, Redis(+ FailOver 구현)
-- 6명이 한 팀으로 진행.
+- Back-end : Spring Boot, MyBatis, Redis(+ FailOver 구현)
+- 6명이 한 팀으로 진행
 - 내가 맡은 역할 : 팀장 & 프론트, 백엔드 (특히, 포트폴리오페이지 프론트, 백 모두 개발)
 - 프로젝트 소개 : 편집자와 편집자를 찾는 사람들 사이의 매칭 플랫폼
 - 프로젝트 특장점
@@ -70,3 +70,36 @@
     - 편집자의 작업 이력을 통한 편집자 추천(검색 결과 반환)
   - 알람 페이지에 스케줄러 기능 제공
 - [프로젝트 자세히 보기](https://github.com/soohyun0907/VideoEditorMatchingPlatform/blob/master/wiki/home.md)
+
+## HowDoMoDo
+
+- 개발 기간 : 20.09.07 ~ 20.10.08
+- Front-end : Kotlin
+- Back-end : Spring Boot, Django, Spark
+- 6명이 한 팀으로 진행
+- 내가 맡은 역할 : 백엔드 (스프링) 개발 및 배포
+- 프로젝트 소개 : 영화사 통합 플랫폼 서비스로 3개의 영화사 (CGV, 롯데시네마, 메가박스) 상영시간 통합 및 주변 활동 분석
+- 프로젝트 특장점
+  - 3개의 영화사 (CGV, 롯데시네마, 메가박스) 상영시간 통합 및 주변 활동 정보 제공
+  - 카드사 결제정보 빅데이터를 활용한 영화관 주변 활동 분석 및 추천! (맛집, 쇼핑 등의 여가활동)
+  - 영화의 수많은 리뷰들을 긍/부정 분석 결과 제공
+- [프로젝트 자세히 보기](https://github.com/soohyun0907/HowDoMoDo)
+
+## RunWithMe (RWM)
+
+- 개발 기간 : 20.10.12 ~ 20.11.27
+- Front-end : Vue.js, Bootstrap, Google Map, Vue Apaxcharts, Web-STOMP
+- Back-end : Spring Boot, Spring Security, JWT, JPA, Redis, STOMP
+- 5명이 한 팀으로 진행
+- 내가 맡은 역할 : 프론트 엔드 개발
+- 프로젝트 소개 : 런닝 기록 저장 및 러닝 메이트들과의 친목, 기부 챌린지, 채팅, 커뮤니티 참여를 통한 게임같은 런닝을 즐길 수 있는 웹 / 앱 서비스
+- 프로젝트 특장점
+  - 러닝 기록 및 분석
+    - 사용자의 러닝을 실시간으로 추적하고 속도, 거리와 같은 기록 화면에 표시 및 저장
+    - 개인 러닝 기록을 실시간 비교를 통해 이전 기록, 최근 기록, 평균 러너 기록 분석을 통해 성장률 확인
+  - 기부 챌린지
+    - 사용자가 관리자에게 요청할 경우 댓글이 많은 챌린지가 생성되며 챌린지 각각의 목표 거리와 기부 금액을 달성하면 기부
+    - 비대면 레이스의 형태로 각자의 위치에서 참여 가능
+  - 커뮤니티
+    - 사용자의 기록과 활동 지역 분석을 통해 다른 러너를 매칭
+    - 일대일 채팅, 지역별 채팅을 통해 다양한 러너들과의 소통 가능

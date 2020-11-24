@@ -1,5 +1,15 @@
 # Projects
 
+## POS
+
+- 2018-2학기 소프트웨어 공학 수업 POS 프로그램
+- 사용언어 : Java
+- IDE : Eclipse
+- 프로젝트 소개
+  - 디자인 패턴을 적용한 POS 프로그램으로 Adapter, Factory, Singleton, Strategy, Composite, Observer 패턴을 적용
+  - 요구사항 명세서부터 읽고 작성하면서 어떠한 기획의 과정을 거쳐 개발까지 완료
+- [프로젝트 소스코드](https://github.com/soohyun0907/POS)
+
 ## 5E Robotics 미국 인턴
 
 - 개발 기간 : 2017.12 ~ 2018.05
@@ -56,7 +66,7 @@
 
 ## 편집, 편하게 집에서 의뢰하세요
 
-🥉 삼성 청년 소프트웨어(SSAFY) 공통 프로젝트 3등 수상
+🥉 삼성 청년 소프트웨어(SSAFY) 공통 프로젝트 반 3등 수상
 
 - 개발 기간 : 20.07.20 ~ 20.08.21
 - Front-end : Vue.js, Vuex, Vuetify
@@ -86,6 +96,8 @@
 - [프로젝트 자세히 보기](https://github.com/soohyun0907/HowDoMoDo)
 
 ## RunWithMe (RWM)
+
+🥇 삼성 청년 소프트웨어(SSAFY) 자율 프로젝트 반 1등 수상
 
 - 개발 기간 : 20.10.12 ~ 20.11.27
 - Front-end : Vue.js, Bootstrap, Google Map, Vue Apaxcharts, Web-STOMP

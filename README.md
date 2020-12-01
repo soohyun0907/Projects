@@ -117,4 +117,4 @@
   - 커뮤니티
     - 사용자의 기록과 활동 지역 분석을 통해 다른 러너를 매칭
     - 일대일 채팅, 지역별 채팅을 통해 다양한 러너들과의 소통 가능
-- [프로젝트 자세히 보기](https://github.com/soohyun0907/RunWithMe_RWM)
+- [프로젝트 자세히 보기](https://github.com/soohyun0907/RunWithMe)
